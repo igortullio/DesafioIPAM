@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+ 
+<html>
+ <head>
+  <meta charset="utf-8"></meta>
+  <title> Desafio - Estagiário IPAM</title>    
+  
+  <style type="text/css">   
+   
+   body{background-color: #FFFAFA}
+   h1{color:#000000; font: 30px courier, sans-serif}
+   legend{font: 20px courier, sans-serif}
+   table{color:#000000; font: 18px courier, sans-serif}
+   
+   #map {
+    height: 300px;    
+    width: 100%;
+   }
+            
+  </style>  
+ </head>
+
+ <body>
+ 
+  <script type="text/javascript">	
+   var dados = {
+    "nome":"Igor Túllio de Santana",
+    "telefone":"(61)98405-8320",
+    "email":"igortullio@hotmail.com",
+    "dia":06,
+    "mes":02,
+    "ano":1997
+    };
+  </script>  
+  
+  <form>
+   <h1>Desafio - Estagiário IPAM</h1>
+  
+   <fieldset>
+    <legend>Dados Pessoais</legend>
+    <table>    
+     <tr>
+      <td><label id="name">Nome Completo: </label></td>
+      <td><script>document.write(dados.nome)</script></td>
+     </tr>
+     <tr>
+      <td><label id="telefone">Telefone: </label></td>
+      <td><script>document.write(dados.telefone)</script></td> 
+     </tr>
+     <tr>
+      <td><label id="email">E-mail: </label></td>
+      <td><script>document.write(dados.email)</script></td>
+     </tr>
+     <tr>
+      <td><label id="idade">Idade: </label></td>
+      <td>
+      <script>
+       hoje= new Date();
+       dia_hoje=hoje.getDate();
+       mes_hoje=hoje.getMonth()+1;
+       ano_hoje=hoje.getFullYear();
+
+       diferenca_dia = dia_hoje - dados.dia;
+       diferenca_mes = mes_hoje - dados.mes;
+       diferenca_ano = ano_hoje - dados.ano;
+       
+       if(diferenca_dia<0){
+	diferenca_dia=30+diferenca_dia;
+	diferenca_mes--;
+       } else if(diferenca_mes<0) {
+	diferenca_mes=12+diferenca_mes;
+	diferenca_ano--;
+       }
+       document.write("Anos: "+diferenca_ano +", Meses: "+diferenca_mes +" e Dias: "+diferenca_dia) 
+      </script>
+      </td>
+     </tr>
+    </table>
+   </fieldset>
+   
+   </br>
+   
+   <fieldset>
+    <legend>Localização da Faculdade</legend>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: -15.841169, lng: -48.046727};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 19,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCzqhD_7_rB645pWYCFm1DtkBV6rqvs8p8&callback=initMap">
+    </script>
+   </fieldset>
+      
+ </body>
+</html>

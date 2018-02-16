@@ -64,14 +64,28 @@
        diferenca_mes = mes_hoje - dados.mes;
        diferenca_ano = ano_hoje - dados.ano;
        
-       if(diferenca_dia<0){
-	diferenca_dia=30+diferenca_dia;
-	diferenca_mes--;
-       } else if(diferenca_mes<0) {
-	diferenca_mes=12+diferenca_mes;
-	diferenca_ano--;
+       if(diferenca_mes>0){
+        if(dia_hoje<dados.dia){
+         diferenca_mes--;
+        }
+       } else if (diferenca_mes<0){
+        diferenca_ano--;
+        diferenca_mes=12+diferenca_mes;
+        if(dia_hoje<dados.dia){
+         diferenca_mes--;
+        }
+       } else {
+        if(dia_hoje<dados.dia){
+         diferenca_mes=11;
+        }
        }
-       document.write("Anos: "+diferenca_ano +", Meses: "+diferenca_mes +" e Dias: "+diferenca_dia) 
+       
+       if(diferenca_dia<0){
+        diferenca_dia=30+diferenca_dia;
+       }
+
+       document.write("Anos: "+diferenca_ano +", Meses: "+diferenca_mes +" e Dias: "+diferenca_dia)
+	
       </script>
       </td>
      </tr>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+ 
+<html>
+ <head>
+  <meta charset="utf-8"></meta>
+  <title> Desafio - Estagiário IPAM</title>    
+  
+  <link rel="stylesheet" type="text/css" href="style.css">   
+  <script type="text/javascript" src="jscript.js"></script>
+  
+ </head>
+
+ <body>  
+  <form>
+   <h1>Desafio - Estagiário IPAM</h1>
+  
+   <fieldset>
+    <legend>Dados Pessoais</legend>
+    <table>    
+     <tr>
+      <td><label id="name">Nome Completo: </label></td>
+      <td><script>document.write(dados.nome)</script></td>
+     </tr>
+     <tr>
+      <td><label id="telefone">Telefone: </label></td>
+      <td><script>document.write(dados.telefone)</script></td> 
+     </tr>
+     <tr>
+      <td><label id="email">E-mail: </label></td>
+      <td><script>document.write(dados.email)</script></td>
+     </tr>
+     <tr>
+      <td><label id="idade">Idade: </label></td>
+      <td>
+       <script> calIdade(); </script>
+      </td>
+     </tr>
+    </table>
+   </fieldset>
+   
+   </br>
+   
+   <fieldset>
+    <legend>Localização da Faculdade</legend>
+    <div id="map"></div>
+    <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key= AIzaSyCzqhD_7_rB645pWYCFm1DtkBV6rqvs8p8&callback=initMap">
+    </script>
+   </fieldset>
+      
+ </body>
+</html>

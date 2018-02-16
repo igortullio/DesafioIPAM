@@ -1,0 +1,9 @@
+body{background-color: #FFFAFA}
+h1{color:#000000; font: 30px courier, sans-serif}
+legend{font: 20px courier, sans-serif}
+table{color:#000000; font: 18px courier, sans-serif}
+   
+#map {
+ height: 300px;    
+ width: 100%;
+}
